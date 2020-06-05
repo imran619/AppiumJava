@@ -1,0 +1,25 @@
+package test;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+
+public class FirstTest {
+
+	public static void main(String[] args) throws MalformedURLException {
+		
+		DesiredCapabilities cap = new DesiredCapabilities();
+		cap.setCapability(MobileCapabilityType.UDID, "192.168.8.102:5555");
+		cap.setCapability(MobileCapabilityType.BROWSER_NAME, "Android");
+		cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+		cap.setCapability(MobileCapabilityType.VERSION, "6.0");
+		AndroidDriver<WebElement> _driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
+
+	}
+
+}
